@@ -2109,19 +2109,57 @@
         .mainHeaderNavColor { color: #f0f0f0 !important; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; }
         .mainHeaderNavColor:hover { color: #ccff00 !important; }
 
-        body.shop #shopHeader { padding: 20px 0; }
+        /* FIXED HEADER */
+        body.shop #mainHeader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 5%;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(204, 255, 0, 0.3);
+        }
+        body.shop { padding-top: 70px; } /* Add padding to prevent content from hiding under header */
+
+        body.shop #shopHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+        }
+        body.shop #shopHeader h1 { margin: 0; }
         body.shop #shopHeader h1 a {
             color: #ffffff !important;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-style: italic;
-            letter-spacing: 3px;
-            font-size: 36px;
+            letter-spacing: 2px;
+            font-size: 28px;
             text-transform: uppercase;
         }
 
-        body.shop #shopHeader nav { border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        body.shop #shopHeader nav ul li:hover { border-bottom: solid 2px #ccff00; }
+        body.shop #shopHeader nav { border: none; margin: 0; }
+        @media(min-width: 769px) {
+            body.shop #shopHeader nav ul { display: flex; align-items: center; gap: 20px; flex-wrap: nowrap; margin: 0; }
+            body.shop #shopHeader nav ul li { width: auto; height: auto; padding: 0; }
+            body.shop #shopHeader nav ul li a { padding: 5px 0; font-size: 14px; position: relative; }
+            body.shop #shopHeader nav ul li:hover { border-bottom: none; height: auto; }
+            
+            body.shop #shopHeader nav ul li a::after {
+                content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+                background-color: #ccff00; transition: width 0.3s ease;
+            }
+            body.shop #shopHeader nav ul li a:hover::after { width: 100%; }
+
+            body.shop #shopHeader nav ul li.itemSearch { padding: 0; width: auto; }
+            body.shop #shopHeader nav ul li.itemSearch form { position: relative; display: flex; align-items: center; padding: 0; height: auto; width: auto; border-bottom: 1px solid rgba(255,255,255,0.2); }
+            body.shop #shopHeader nav ul li.itemSearch form input { background: transparent; color: #fff; padding: 5px 30px 5px 5px; position: relative; border: none; width: 150px; }
+            body.shop #shopHeader nav ul li.itemSearch form .itemSearch__btn { position: absolute; right: 0; }
+        }
 
         /* HERO SECTION - ADVANCED */
         .work-world-hero {
