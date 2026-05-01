@@ -2154,7 +2154,7 @@
         @media(min-width: 769px) {
             body.shop #shopHeader nav ul { display: flex; align-items: center; gap: 20px; flex-wrap: nowrap; margin: 0; }
             body.shop #shopHeader nav ul li { width: auto; height: auto; padding: 0; }
-            body.shop #shopHeader nav ul li a { padding: 5px 0; font-size: 14px; position: relative; }
+            body.shop #shopHeader nav ul li a { padding: 5px 0; font-size: 14px; position: relative; white-space: nowrap; display: block; }
             body.shop #shopHeader nav ul li:hover { border-bottom: none; height: auto; }
             
             body.shop #shopHeader nav ul li a::after {
@@ -2341,6 +2341,122 @@
             font-weight: 700;
             text-align: left;
             letter-spacing: 1px;
+        }
+        
+        /* ITEM DETAIL PAGE (PRODUCT PAGE) OVERRIDES */
+        body#shopDetailPage {
+            background-color: #050505;
+            color: #f0f0f0;
+        }
+        
+        body#shopDetailPage #mainContent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            padding-top: 40px;
+        }
+
+        body#shopDetailPage .itemImg {
+            width: 100%;
+            max-width: 50%;
+            background: transparent;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body#shopDetailPage #slideImg .imgBox img {
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body#shopDetailPage .itemDetail {
+            width: 100%;
+            max-width: 45%;
+        }
+
+        body#shopDetailPage header h1.itemTitle {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        body#shopDetailPage .itemPrice h2 {
+            font-family: 'Oswald', sans-serif;
+            color: #ccff00;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        body#shopDetailPage #purchase_form {
+            background: #0a0a0a;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        body#shopDetailPage #purchase_form label {
+            color: #ccc;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        body#shopDetailPage #purchase_form select,
+        body#shopDetailPage #purchase_form input {
+            background-color: #111 !important;
+            color: #fff !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 12px !important;
+            border-radius: 4px !important;
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        body#shopDetailPage #purchase_form .btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background-color: #ccff00;
+            color: #000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        body#shopDetailPage #purchase_form .btn:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        body#shopDetailPage .itemAttention {
+            color: #aaa;
+            line-height: 1.8;
+            margin-top: 40px;
+            font-size: 14px;
+            background: #111;
+            padding: 20px;
+            border-left: 4px solid #ccff00;
+        }
+
+        @media (max-width: 768px) {
+            body#shopDetailPage #mainContent { flex-direction: column; }
+            body#shopDetailPage .itemImg, body#shopDetailPage .itemDetail { max-width: 100%; }
         }
         
         body.shop #mainFooter { color: #666; border-top: 1px solid #222; padding-top: 60px; }
