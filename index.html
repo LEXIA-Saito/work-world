@@ -2345,34 +2345,24 @@
         
         /* ITEM DETAIL PAGE (PRODUCT PAGE) OVERRIDES */
         body#shopDetailPage {
-            background-color: #050505;
-            color: #f0f0f0;
+            background-color: #050505 !important;
+            color: #f0f0f0 !important;
         }
         
         body#shopDetailPage #mainContent {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
+            align-items: flex-start;
             padding-top: 40px;
+            background-color: transparent !important;
+            color: #f0f0f0 !important;
         }
-
-        body#shopDetailPage .itemImg {
+        
+        /* タイトルは全幅 */
+        body#shopDetailPage #mainContent > header {
             width: 100%;
-            max-width: 50%;
-            background: transparent;
-            padding: 0;
-            box-sizing: border-box;
-            border: none;
-        }
-
-        body#shopDetailPage #slideImg .imgBox img {
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        body#shopDetailPage .itemDetail {
-            width: 100%;
-            max-width: 45%;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         body#shopDetailPage header h1.itemTitle {
@@ -2381,16 +2371,52 @@
             color: #ffffff;
             margin-bottom: 20px;
             line-height: 1.4;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
+            border: none;
+        }
+
+        /* 左カラム（画像と説明） */
+        body#shopDetailPage #mainContent > .item {
+            width: 55%;
+            padding-right: 40px;
+            box-sizing: border-box;
+            background: transparent;
+            border: none;
+        }
+
+        body#shopDetailPage .itemImg {
+            width: 100%;
+            max-width: 100%;
+            background: transparent;
+            padding: 0;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        body#shopDetailPage #slideImg .imgBox img {
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            height: auto;
+        }
+        
+        body#shopDetailPage .itemDescription {
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* 右カラム（価格と購入フォーム） */
+        body#shopDetailPage #mainContent > .purchase {
+            width: 45%;
+            box-sizing: border-box;
         }
 
         body#shopDetailPage .itemPrice h2 {
             font-family: 'Oswald', sans-serif;
-            color: #ccff00;
-            font-size: 36px;
+            color: #ccff00 !important;
+            font-size: 42px !important;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             letter-spacing: 2px;
         }
 
@@ -2399,20 +2425,22 @@
             padding: 30px;
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 4px;
+            margin-top: 20px;
         }
 
         body#shopDetailPage #purchase_form label {
-            color: #ccc;
+            color: #ffffff !important;
             font-weight: bold;
             margin-bottom: 8px;
             display: block;
+            font-size: 14px;
         }
 
         body#shopDetailPage #purchase_form select,
         body#shopDetailPage #purchase_form input {
-            background-color: #111 !important;
-            color: #fff !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255,255,255,0.3) !important;
             padding: 12px !important;
             border-radius: 4px !important;
             width: 100% !important;
@@ -2444,19 +2472,26 @@
             transform: translateY(-2px);
         }
 
-        body#shopDetailPage .itemAttention {
+        body#shopDetailPage .itemAttention,
+        body#shopDetailPage #itemAttention {
             color: #aaa;
             line-height: 1.8;
-            margin-top: 40px;
-            font-size: 14px;
+            margin-top: 20px;
+            font-size: 13px;
             background: #111;
             padding: 20px;
             border-left: 4px solid #ccff00;
         }
+        
+        body#shopDetailPage .attention { color: #ccc; }
 
         @media (max-width: 768px) {
             body#shopDetailPage #mainContent { flex-direction: column; }
-            body#shopDetailPage .itemImg, body#shopDetailPage .itemDetail { max-width: 100%; }
+            body#shopDetailPage #mainContent > .item, 
+            body#shopDetailPage #mainContent > .purchase { 
+                width: 100%; 
+                padding-right: 0;
+            }
         }
         
         body.shop #mainFooter { color: #666; border-top: 1px solid #222; padding-top: 60px; }
