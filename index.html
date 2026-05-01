@@ -2131,7 +2131,7 @@
             width: 100%;
             padding: 0;
         }
-        body.shop #shopHeader h1 { margin: 0; }
+        body.shop #shopHeader h1 { margin: 0; display: flex; align-items: center; }
         body.shop #shopHeader h1 a {
             color: #ffffff !important;
             font-family: 'Montserrat', sans-serif;
@@ -2140,6 +2140,14 @@
             letter-spacing: 2px;
             font-size: 28px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+        /* ロゴ画像のサイズを制限してヘッダーが巨大化するのを防ぐ */
+        body.shop #shopHeader h1 a img {
+            max-height: 45px;
+            width: auto;
+            vertical-align: middle;
         }
 
         body.shop #shopHeader nav { border: none; margin: 0; }
