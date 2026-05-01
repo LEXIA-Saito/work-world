@@ -2093,6 +2093,212 @@
                 margin: 0 0 12px 0 !important;
             }
         }
+
+        /* --- WORK-WORLD CUSTOM STYLES (ADVANCED) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Oswald:wght@500;700&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        body.shop, body {
+            background-color: #050505 !important;
+            color: #f0f0f0;
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: #f0f0f0; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+        a:hover { color: #ccff00; text-decoration: none; }
+        .mainHeaderNavColor { color: #f0f0f0 !important; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; }
+        .mainHeaderNavColor:hover { color: #ccff00 !important; }
+
+        body.shop #shopHeader { padding: 20px 0; }
+        body.shop #shopHeader h1 a {
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 3px;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        body.shop #shopHeader nav { border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        body.shop #shopHeader nav ul li:hover { border-bottom: solid 2px #ccff00; }
+
+        /* HERO SECTION - ADVANCED */
+        .work-world-hero {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            min-height: 600px;
+            background-image: url("file:///Users/saitoumasato/.gemini/antigravity/brain/69cd7edc-8cbd-4192-852b-310cf9fae5cb/work_world_hero_1777618682758.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5%;
+            margin-bottom: 80px;
+            overflow: hidden;
+        }
+        .work-world-hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding-left: 5%;
+        }
+        .hero-badge {
+            display: inline-block;
+            background-color: #ccff00;
+            color: #000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            padding: 5px 15px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            transform: skewX(-15deg);
+        }
+        .hero-badge span { display: block; transform: skewX(15deg); }
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(48px, 8vw, 90px);
+            color: #ffffff;
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.0;
+            text-transform: uppercase;
+        }
+        .hero-subtitle {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border-left: 4px solid #ccff00;
+            padding-left: 20px;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background-color: transparent;
+            color: #ffffff !important;
+            border: 2px solid #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: #ccff00;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        .hero-btn:hover { color: #000 !important; border-color: #ccff00; }
+        .hero-btn:hover::before { left: 0; }
+
+        /* CONCEPT SECTION */
+        .work-world-concept {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 5%;
+            margin: 0 auto 80px;
+            background-color: #0a0a0a;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .concept-text { flex: 1; min-width: 300px; padding-right: 5%; }
+        .concept-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .concept-text h3 span { color: #ccff00; }
+        .concept-text p {
+            font-size: 16px;
+            line-height: 2.0;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        .concept-kobasyo {
+            flex: 0 1 400px;
+            background: #111;
+            padding: 40px;
+            border-left: 4px solid #ccff00;
+        }
+        .concept-kobasyo h4 { font-family: 'Oswald', sans-serif; font-size: 14px; color: #ccff00; margin-bottom: 15px; letter-spacing: 2px;}
+        .concept-kobasyo p { font-size: 14px; color: #ccc; line-height: 1.8; }
+        .concept-kobasyo a { display: inline-block; margin-top: 20px; font-weight: bold; text-decoration: underline; }
+
+        /* ITEM LIST OVERRIDE */
+        .titleForSearchResult { font-family: 'Oswald', sans-serif; letter-spacing: 2px; }
+        
+        body#shopTopPage .itemList { padding-top: 20px; }
+        body#shopTopPage .item {
+            background: transparent;
+            border: none;
+            overflow: visible;
+            position: relative;
+            padding: 0;
+            margin-bottom: 60px;
+        }
+        body#shopTopPage .item .itemImg {
+            background: #111;
+            overflow: hidden;
+            border-radius: 0;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        body#shopTopPage .item:hover .itemImg {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        body#shopTopPage .item .itemImg img.image-resize { transition: transform 0.6s ease; }
+        body#shopTopPage .item:hover .itemImg img.image-resize { transform: scale(1.08); }
+        
+        body#shopTopPage .item .itemTitle { text-align: left; margin: 20px 0 10px; }
+        body#shopTopPage .item a .itemTitle h2 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        body#shopTopPage .item .itemDetail .itemPrice {
+            color: #ccff00;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left;
+            letter-spacing: 1px;
+        }
+        
+        body.shop #mainFooter { color: #666; border-top: 1px solid #222; padding-top: 60px; }
+        /* --- END WORK-WORLD CUSTOM STYLES --- */
     </style>
 
     {block:IndexPage}
@@ -2238,6 +2444,32 @@
     <p style="text-align: center;">{lang:NotShopPublicMessage}</p>
     {/block:NotShopPublic}
     {block:ShopPublic}
+    
+    <!-- Hero Section -->
+    {block:NoIndexPageCategory}{block:NoIndexPageSearch}
+    <section class="work-world-hero">
+        <div class="hero-content">
+            <div class="hero-badge"><span>ADVANCED WORKGEAR</span></div>
+            <h2 class="hero-title">NEXT GEN<br>WORKWEAR</h2>
+            <p class="hero-subtitle">圧倒的な機能美とスタイリング。<br>現場のプロフェッショナルへ、最先端のギアを。</p>
+            <a href="#mainContent" class="hero-btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="work-world-concept">
+        <div class="concept-text">
+            <h3>WORKWEAR <span>INNOVATION</span></h3>
+            <p>従来の作業服の概念を打ち破る、スポーツやストリートのエッセンスを取り入れた先進的なデザイン。過酷な現場で闘うプロのパフォーマンスを最大限に引き出すため、機能性・耐久性・そして「圧倒的なカッコよさ」を追求した厳選アイテムのみを展開します。</p>
+        </div>
+        <div class="concept-kobasyo">
+            <h4>PRODUCED BY KOBASYO</h4>
+            <p>work-worldは、愛知県西尾市で長年「働く人のための衣料」を提供し続ける株式会社コバヤシ商事が運営しています。地元密着で培った確かな信頼と実績をベースに、全国のプロフェッショナルへ最高品質のギアをお届けします。</p>
+            <a href="https://kobasyo.jp/" target="_blank" rel="noopener">運営会社について</a>
+        </div>
+    </section>
+    {/block:NoIndexPageSearch}{/block:NoIndexPageCategory}
+
     {block:AppsBlogArticleIsPinned}{block:NoIndexPageCategory}{block:NoIndexPageSearch}
     <div class="pinnedBlog">
         <p class="pinnedBlog_title mainHeaderNavColor">
