@@ -2642,6 +2642,49 @@
             }
         }
 
+        /* CATEGORY DROPDOWN MENU OVERRIDES */
+        body.shop #category-menu .category-list ul,
+        body.shop .appsItemCategoryTag_lowerchild {
+            background-color: #111 !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8) !important;
+            border-radius: 4px !important;
+            padding: 0 !important;
+            overflow: hidden;
+        }
+
+        body.shop #category-menu .category-list ul li,
+        body.shop .appsItemCategoryTag_child,
+        body.shop .appsItemCategoryTag_lowerchild li {
+            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        }
+        
+        body.shop #category-menu .category-list ul li:last-child,
+        body.shop .appsItemCategoryTag_child:last-child,
+        body.shop .appsItemCategoryTag_lowerchild li:last-child {
+            border-bottom: none !important;
+        }
+
+        body.shop #category-menu .category-list ul li a,
+        body.shop .appsItemCategoryTag_child a,
+        body.shop .appsItemCategoryTag_lowerLink {
+            color: #f0f0f0 !important;
+            transition: all 0.3s ease;
+            background-color: transparent !important;
+            padding: 12px 20px !important;
+        }
+
+        body.shop #category-menu:hover .category-list ul li:hover,
+        body.shop .appsItemCategoryTag_child:hover,
+        body.shop .appsItemCategoryTag_lowerchild li:hover,
+        body.shop #category-menu:hover .category-list ul li:hover > a,
+        body.shop .appsItemCategoryTag_child:hover > a,
+        body.shop .appsItemCategoryTag_lowerchild li:hover > a {
+            background-color: #222 !important;
+            color: #ccff00 !important;
+            text-decoration: none !important;
+        }
+
         /* --- END WORK-WORLD CUSTOM STYLES --- */
     </style>
 
