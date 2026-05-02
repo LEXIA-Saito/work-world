@@ -2173,6 +2173,7 @@
         .work-world-hero {
             position: relative;
             width: 100%;
+            box-sizing: border-box; /* Prevent horizontal overflow */
             height: 85vh;
             min-height: 600px;
             background-image: url("https://basefile.akamaized.net/workw-base-shop/69f5790825621/work_world_hero_2.jpg");
@@ -2685,19 +2686,67 @@
             text-decoration: none !important;
         }
 
+        /* HAMBURGER MENU GLOBALS */
+        .nav-toggle { display: none; }
+        .nav-toggle-label { display: none; cursor: pointer; padding: 15px; }
+        .nav-toggle-label span,
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            display: block; background: #fff; height: 2px; width: 24px; border-radius: 2px;
+            position: relative; transition: all 0.3s ease;
+        }
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after { content: ''; position: absolute; }
+        .nav-toggle-label span::before { bottom: 8px; }
+        .nav-toggle-label span::after { top: 8px; }
+
         /* COMPREHENSIVE RESPONSIVE DESIGN (MOBILE) */
         @media (max-width: 768px) {
             /* Header */
-            body.shop { padding-top: 60px; }
+            body.shop { padding-top: 60px; overflow-x: hidden; }
             body.shop #mainHeader { padding: 10px 15px; }
             body.shop #shopHeader h1 a img { max-height: 35px; }
-            body.shop #shopHeader h1 a { font-size: 18px; }
+            body.shop #shopHeader h1 a { font-size: 18px; position: relative; z-index: 10002; }
+            
+            /* Hamburger Menu */
+            .nav-toggle-label { display: block; position: absolute; right: 15px; top: 8px; z-index: 10002; }
+            body.shop #shopHeader nav {
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background-color: rgba(5, 5, 5, 0.98);
+                transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+                z-index: 10001;
+                padding-top: 80px;
+                border-left: 1px solid rgba(255,255,255,0.1);
+                overflow-y: auto;
+            }
+            body.shop #shopHeader nav ul { display: flex; flex-direction: column; align-items: flex-start; padding: 0 20px; gap: 0; }
+            body.shop #shopHeader nav ul li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0; height: auto; }
+            body.shop #shopHeader nav ul li a,
+            body.shop #shopHeader nav ul li span.mainHeaderNavColor { 
+                font-size: 16px; padding: 15px 0; display: block; width: 100%; 
+            }
+            
+            .nav-toggle:checked ~ nav { right: 0; }
+            .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
+            .nav-toggle:checked ~ .nav-toggle-label span::before { bottom: 0; transform: rotate(45deg); }
+            .nav-toggle:checked ~ .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
+
+            /* Category Dropdown in Mobile Nav */
+            body.shop #category-menu .category-list { display: block !important; padding: 0 !important; }
+            body.shop #category-menu .category-list ul { 
+                position: static; box-shadow: none !important; border: none !important; 
+                background: transparent !important; margin-left: 15px; padding-bottom: 15px !important;
+            }
+            body.shop #category-menu .category-list ul li { border-bottom: none !important; }
+            body.shop #category-menu .category-list ul li a { padding: 8px 0 !important; font-size: 14px; color: #ccc !important; }
+            body.shop #category-menu:hover .category-list ul li a:hover { background: transparent !important; color: #ccff00 !important; }
 
             /* Hero Section */
             .work-world-hero {
                 min-height: auto;
                 height: auto;
                 padding: 60vw 20px 60px; /* Make room for the uncropped image at the top */
+                background-image: url("https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg");
                 background-size: 100% auto;
                 background-attachment: scroll; /* Disable fixed parallax on mobile for better scaling */
                 background-position: top center;
@@ -2823,6 +2872,10 @@
     <header id="mainHeader" class="wrapper">
         <div id="shopHeader">
             <h1><a href="{IndexPageURL}" id="logo">{LogoTag}</a></h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
             <nav>
                 <ul>
                     <li><a class="mainHeaderNavColor" href="{IndexPageURL}">HOME</a></li>
