@@ -2553,6 +2553,38 @@
             body.shop #about { margin: 40px 5%; padding: 30px 20px; }
         }
 
+        /* FORCE VISIBILITY FOR THEME COLOR CLASSES */
+        .childCategoryList01_child,
+        .childCategoryList01_link,
+        .appsItemCategoryTag_lowerLink,
+        .categoryTitle01,
+        .footerNav,
+        #openIllegalReport {
+            color: #f0f0f0 !important;
+            transition: color 0.3s ease;
+        }
+        
+        .childCategoryList01_link:hover,
+        .appsItemCategoryTag_lowerLink:hover,
+        .footerNav:hover,
+        #openIllegalReport:hover {
+            color: #ccff00 !important;
+            text-decoration: none;
+        }
+
+        /* FOOTER OVERRIDES */
+        body.shop #mainFooter {
+            color: #aaa;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            padding-bottom: 40px;
+            margin-top: 80px;
+        }
+        
+        body.shop #shopHeader nav ul li.itemSearch form input::placeholder { 
+            color: rgba(255,255,255,0.6); 
+        }
+
         /* --- END WORK-WORLD CUSTOM STYLES --- */
     </style>
 
