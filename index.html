@@ -2585,6 +2585,63 @@
             color: rgba(255,255,255,0.6); 
         }
 
+        /* SYSTEM PAGES OVERRIDES (Law, Privacy, Contact, etc.) */
+        body.shop #law, body.shop .law,
+        body.shop #privacy, body.shop .privacy,
+        body.shop #contact, body.shop .contact,
+        body.shop #blog, body.shop .blog {
+            max-width: 800px;
+            margin: 60px auto 100px;
+            background-color: #0a0a0a !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 40px;
+            border-radius: 4px;
+            color: #f0f0f0 !important;
+        }
+
+        body.shop #law h2, body.shop .law h2,
+        body.shop #privacy h2, body.shop .privacy h2,
+        body.shop #contact h2, body.shop .contact h2,
+        body.shop #blog h2, body.shop .blog h2 {
+            font-family: 'Oswald', sans-serif;
+            color: #ccff00 !important;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        body.shop #law h3, body.shop .law h3,
+        body.shop #privacy h3, body.shop .privacy h3,
+        body.shop #contact h3, body.shop .contact h3 {
+            color: #ccff00 !important;
+            font-size: 16px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        body.shop #law p, body.shop .law p,
+        body.shop #privacy p, body.shop .privacy p,
+        body.shop #contact p, body.shop .contact p,
+        body.shop #law div, body.shop .law div,
+        body.shop #privacy div, body.shop .privacy div,
+        body.shop #contact div, body.shop .contact div {
+            color: #f0f0f0 !important;
+            line-height: 1.8;
+            background-color: transparent !important;
+        }
+        
+        @media (max-width: 768px) {
+            body.shop #law, body.shop .law,
+            body.shop #privacy, body.shop .privacy,
+            body.shop #contact, body.shop .contact,
+            body.shop #blog, body.shop .blog {
+                margin: 40px 5%; padding: 30px 20px;
+            }
+        }
+
         /* --- END WORK-WORLD CUSTOM STYLES --- */
     </style>
 
