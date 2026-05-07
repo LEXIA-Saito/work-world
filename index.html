@@ -15,20 +15,26 @@
     <meta name="keywords" content="作業服,ワークウェア,空調服,バートル,作業着,現場,プロ,愛知,西尾市,通販,work-world">
     <meta name="author" content="work-world">
 
-    <!-- SEO: OGP (Open Graph Protocol) for SNS sharing -->
+    <!-- SEO: OGP & Twitter Card (Conditional per page type) -->
+    {block:NotItemPage}
     <meta property="og:type" content="website">
     <meta property="og:title" content="work-world | 現場のプロへ最先端ワークウェアを">
     <meta property="og:description" content="愛知県西尾市発。機能性と圧倒的なスタイリングを両立した、現場のプロへ贈る最先端ワークウェア専門ショップ。バートル・空調服など厳選アイテムを通販でお届け。">
-    <meta property="og:image" content="https://basefile.akamaized.net/workw-base-shop/69f5790825621/work_world_hero_2.jpg">
+    <meta property="og:image" content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
     <meta property="og:url" content="{IndexPageURL}">
     <meta property="og:site_name" content="work-world">
     <meta property="og:locale" content="ja_JP">
 
-    <!-- SEO: Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="work-world | 現場のプロへ最先端ワークウェアを">
     <meta name="twitter:description" content="愛知県西尾市発。機能性と圧倒的なスタイリングを両立した、現場のプロへ贈る最先端ワークウェア専門ショップ。">
-    <meta name="twitter:image" content="https://basefile.akamaized.net/workw-base-shop/69f5790825621/work_world_hero_2.jpg">
+    <meta name="twitter:image" content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
+    {/block:NotItemPage}
+
+    {block:ItemPage}
+    <!-- BASE's built-in tag to automatically generate product-specific OGP and Twitter cards -->
+    {MetaItemInfoTag}
+    {/block:ItemPage}
 
     <!-- Web Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -855,6 +861,11 @@
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
+            }
+
+            body#shopTopPage .item .itemImg a {
+                width: 100%;
+                height: 100%;
             }
 
             body#shopTopPage .item .itemImg img {
@@ -2473,6 +2484,10 @@
         body#shopDetailPage #mainContent > .purchase {
             width: 45%;
             box-sizing: border-box;
+            margin: 0 !important; /* Reset BASE template margin */
+            position: sticky;
+            top: 40px; /* Sticky offset from top */
+            z-index: 10000; /* Ensure modals inside purchase area appear above the image slider */
         }
 
         body#shopDetailPage .itemPrice h2 {
@@ -2801,9 +2816,14 @@
             body.shop #shopHeader .nav-toggle:checked ~ .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
 
             /* Category Dropdown in Mobile Nav */
-            body.shop #category-menu .category-list { display: block !important; padding: 0 !important; }
+            body.shop #category-menu .category-list,
+            body.shop #category-menu:hover .category-list { 
+                display: block !important; 
+                padding: 0 !important; 
+                position: static !important;
+            }
             body.shop #category-menu .category-list ul { 
-                position: static; box-shadow: none !important; border: none !important; 
+                position: static !important; box-shadow: none !important; border: none !important; 
                 background: transparent !important; margin-left: 15px; padding-bottom: 15px !important;
             }
             body.shop #category-menu .category-list ul li { border-bottom: none !important; }
@@ -3068,6 +3088,78 @@
         }
         .fade-in-section:nth-child(2) { transition-delay: 0.1s; }
         .fade-in-section:nth-child(3) { transition-delay: 0.2s; }
+
+        /* PRODUCT DETAIL PAGE IMAGE OVERRIDES */
+        body#shopDetailPage .itemImg {
+            flex-direction: column !important;
+            height: auto !important;
+            width: 100% !important;
+        }
+
+        body#shopDetailPage .itemImgSlide,
+        body#shopDetailPage #mainContent .item .bx-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            float: none !important;
+        }
+
+        body#shopDetailPage #slideImg .imgBox {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1/1 !important;
+            line-height: normal !important;
+        }
+
+        body#shopDetailPage #slideImg .imgBox img {
+            max-width: 100% !important;
+            max-height: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+        }
+
+        body#shopDetailPage #slideImgPager {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+            width: 100% !important;
+            height: auto !important;
+            padding: 15px 0 0 0 !important;
+            float: none !important;
+            box-sizing: border-box !important;
+        }
+
+        body#shopDetailPage #slideImgPager li {
+            margin: 0 !important;
+            width: calc(20% - 8px) !important; /* 5 columns grid */
+        }
+        
+        body#shopDetailPage #slideImgPager li+li {
+            margin-top: 0 !important;
+        }
+
+        body#shopDetailPage #slideImgPager .smallImgBox {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1/1 !important;
+            line-height: normal !important;
+            border: 2px solid transparent !important;
+            border-radius: 4px !important;
+            overflow: hidden !important;
+            transition: border-color 0.3s ease !important;
+        }
+
+        body#shopDetailPage #slideImgPager .smallImgBox:hover {
+            border-color: #ccff00 !important;
+        }
+
+        body#shopDetailPage #slideImgPager .smallImgBox img {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            object-fit: cover !important;
+        }
 
         /* --- END WORK-WORLD CUSTOM STYLES --- */
     </style>
@@ -3799,6 +3891,28 @@
         {AppsReviewTag}
         {/block:AppsReview}
     </section>
+
+    <!-- Product JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{ItemTitle}",
+      "image": [
+        "{block:ItemImage1}{ItemImage1URL-origin}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}"
+      ],
+      "description": "{ItemTitle} - work-worldの専門ワークウェア",
+      "offers": {
+        "@type": "Offer",
+        "url": "{ItemPageURL}",
+        "priceCurrency": "JPY",
+        "price": "{ItemPrice}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "{block:HasItemStock}https://schema.org/InStock{/block:HasItemStock}{block:NoItemStock}https://schema.org/OutOfStock{/block:NoItemStock}"
+      }
+    }
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/gh/jackmoore/colorbox@1.6.4/jquery.colorbox-min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/stevenwanderski/bxslider-4@4.2.15/dist/jquery.bxslider.min.js"></script>
     <script
@@ -3816,7 +3930,7 @@
                     $(window).on('load', function () {
                         COMMON.slide_img();
                         COMMON.colorbox();
-                        COMMON.customScrollBar();
+                        // COMMON.customScrollBar(); // Disabled to allow flex grid layout for thumbnails
                     });
                 },
                 slide_img: function () {
