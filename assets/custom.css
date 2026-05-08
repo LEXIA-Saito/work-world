@@ -2,7 +2,7 @@
 
 body.shop, body {
     background-color: #050505 !important;
-    color: #f0f0f0;
+    color: #f0f0f0 !important;
     font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif !important;
     -webkit-font-smoothing: antialiased;
 }

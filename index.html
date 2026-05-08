@@ -548,7 +548,6 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jackmoore/colorbox@1.6.4/example1/colorbox.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
     <style>
         #reportBtn a.cboxElement button {
             cursor: pointer;
@@ -582,7 +581,7 @@
         }
 
         body.shop {
-            color: #000;
+            color: #f0f0f0;
             font-size: 13px;
             line-height: 1.5;
             -webkit-text-size-adjust: none;
@@ -590,8 +589,8 @@
         }
 
         body {
-            background-color: #ADC7C1;
-            font-family: Lato, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+            background-color: #050505;
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
         }
 
         body.shop .wrapper {
@@ -606,7 +605,7 @@
         }
 
         body.shop #mainHeader {
-            margin: 0 auto 34px;
+            margin: 0;
         }
 
 
@@ -625,7 +624,7 @@
         }
 
         body.shop #shopHeader h1 {
-            margin: 56px 0 34px;
+            margin: 0;
         }
 
         body.shop #shopHeader h1 a {
@@ -647,9 +646,8 @@
         }
 
         body.shop #shopHeader nav {
-            border-bottom: 2px solid #000;
-            border-top: 2px solid #000;
-            margin: 0 7px;
+            border: none;
+            margin: 0;
         }
 
         body.shop #shopHeader nav ul {
@@ -2172,8 +2170,6 @@
                 margin: 0 0 12px 0 !important;
             }
         }
-
-        @import url('https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css');
     </style>
 
     {block:IndexPage}
@@ -2203,6 +2199,9 @@
             /block: NavColor
         }
     </style>
+
+    <!-- Custom Styles (loaded after BASE theme CSS to override correctly) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css">
 
     {block:ItemPage}
     {MetaItemInfoTag}
