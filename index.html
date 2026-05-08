@@ -3631,28 +3631,35 @@
     </section>
     {/block:NoIndexPageCategory}{/block:NoIndexPageSearch}{/block:IndexPage}
 
-    {block:NoIndexPage}
+    {block:IndexPageCategory}
     <nav class="ww-breadcrumb" aria-label="パンくずリスト">
         <ol itemscope itemtype="https://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="{IndexPageURL}"><span itemprop="name">TOP</span></a>
                 <meta itemprop="position" content="1">
             </li>
-            {block:IndexPageCategory}
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <span itemprop="name">{IndexPageCategoryTitle}</span>
                 <meta itemprop="position" content="2">
             </li>
-            {/block:IndexPageCategory}
-            {block:IndexPageSearch}
+        </ol>
+    </nav>
+    {/block:IndexPageCategory}
+
+    {block:IndexPageSearch}
+    <nav class="ww-breadcrumb" aria-label="パンくずリスト">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="{IndexPageURL}"><span itemprop="name">TOP</span></a>
+                <meta itemprop="position" content="1">
+            </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <span itemprop="name">「{IndexPageSearchQuery}」の検索結果</span>
                 <meta itemprop="position" content="2">
             </li>
-            {/block:IndexPageSearch}
         </ol>
     </nav>
-    {/block:NoIndexPage}
+    {/block:IndexPageSearch}
 
     {block:HasItems}
     <section id="mainContent" class="itemList clearfix">
