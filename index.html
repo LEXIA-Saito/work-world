@@ -3067,6 +3067,49 @@
             .faq-item summary { font-size: 15px; }
         }
 
+        /* BREADCRUMB */
+        .ww-breadcrumb {
+            padding: 14px 40px;
+            background: #0d0d0d;
+            border-bottom: 1px solid #1e1e1e;
+        }
+        .ww-breadcrumb ol {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .ww-breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+        .ww-breadcrumb li + li::before {
+            content: '/';
+            margin-right: 6px;
+            color: #444;
+        }
+        .ww-breadcrumb li a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .ww-breadcrumb li a:hover {
+            color: #ccff00;
+        }
+        .ww-breadcrumb li:last-child span {
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .ww-breadcrumb { padding: 10px 16px; }
+            .ww-breadcrumb li { font-size: 11px; }
+        }
+
         /* NEW ARRIVAL SECTION HEADER */
         .work-world-new-arrival-header {
             padding: 60px 40px 30px;
@@ -3590,6 +3633,29 @@
     </section>
     {/block:NoIndexPageCategory}{/block:NoIndexPageSearch}{/block:IndexPage}
 
+    {block:NoIndexPage}
+    <nav class="ww-breadcrumb" aria-label="パンくずリスト">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="{IndexPageURL}"><span itemprop="name">TOP</span></a>
+                <meta itemprop="position" content="1">
+            </li>
+            {block:IndexPageCategory}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">{IndexPageCategoryTitle}</span>
+                <meta itemprop="position" content="2">
+            </li>
+            {/block:IndexPageCategory}
+            {block:IndexPageSearch}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">「{IndexPageSearchQuery}」の検索結果</span>
+                <meta itemprop="position" content="2">
+            </li>
+            {/block:IndexPageSearch}
+        </ol>
+    </nav>
+    {/block:NoIndexPage}
+
     {block:HasItems}
     <section id="mainContent" class="itemList clearfix">
         {block:Items}
@@ -3698,6 +3764,19 @@
     {block:ItemPage}
     <section id="mainContent" class="wrapper clearfix">
         {IllegalReportMessageTag}
+        <!-- Breadcrumb Navigation -->
+        <nav class="ww-breadcrumb" aria-label="パンくずリスト">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="{IndexPageURL}"><span itemprop="name">TOP</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">{ItemTitle}</span>
+                    <meta itemprop="position" content="2">
+                </li>
+            </ol>
+        </nav>
         <header>
             <h1 class="itemTitle">
                 {ItemTitle}{block:AppsDownload}{block:ItemDigitalContent}({ItemDigitalContent}){/block:ItemDigitalContent}{/block:AppsDownload}
