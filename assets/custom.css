@@ -9,7 +9,7 @@ body.shop, body {
 
 a { color: #f0f0f0; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
 a:hover { color: #ccff00; text-decoration: none; }
-.mainHeaderNavColor { color: #f0f0f0 !important; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; }
+.mainHeaderNavColor { color: #f0f0f0 !important; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; white-space: nowrap; text-transform: uppercase; }
 .mainHeaderNavColor:hover { color: #ccff00 !important; }
 
 body.shop #mainHeader {
@@ -1210,7 +1210,7 @@ body#shopDetailPage #slideImgPager .smallImgBox img {
 
 @media (max-width: 992px) {
     .ww-layout-container { 
-        flex-direction: column; 
+        flex-direction: column-reverse; 
         padding: 0;
     }
     .ww-main-area {
