@@ -24,7 +24,8 @@ body.shop #mainHeader {
     box-sizing: border-box;
     border-bottom: 1px solid rgba(204, 255, 0, 0.3);
 }
-body.shop { padding-top: 70px; }
+body.shop { padding-top: 180px; }
+@media (max-width: 768px) { body.shop { padding-top: 70px; } }
 
 body.shop #shopHeader {
     display: flex;
@@ -193,7 +194,7 @@ body.shop #shopHeader nav { border: none; margin: 0; }
     font-weight: 700;
     text-transform: uppercase;
 }
-.concept-text h3 span { color: #ccff00; }
+.concept-text h3 span { color: #ccff00; display: block; }
 .concept-text p {
     font-size: 16px;
     line-height: 2.0;
@@ -679,8 +680,8 @@ body.shop .appsItemCategoryTag_lowerchild li:hover > a {
     .hero-subtitle { font-size: 14px; margin-bottom: 30px; }
     .hero-btn { padding: 15px; font-size: 16px; width: 100%; text-align: center; box-sizing: border-box; }
 
-    .work-world-concept { padding: 40px 20px; margin-bottom: 40px; }
-    .concept-text { padding-right: 0; margin-bottom: 40px; }
+    .work-world-concept { padding: 40px 20px; margin-bottom: 40px; flex-direction: column; }
+    .concept-text { padding-right: 0; margin-bottom: 40px; width: 100%; box-sizing: border-box; }
     .concept-text h3 { font-size: 24px; word-break: keep-all; overflow-wrap: break-word; line-height: 1.5; letter-spacing: 2px; }
     .concept-kobasyo { flex: 1 1 100%; padding: 25px; }
 
@@ -1074,7 +1075,7 @@ body#shopDetailPage #slideImgPager .smallImgBox img {
     width: 250px;
     flex-shrink: 0;
     position: sticky;
-    top: 100px; /* Below header */
+    top: 180px; /* Below header */
     height: max-content;
     z-index: 99;
 }
