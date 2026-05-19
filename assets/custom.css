@@ -54,7 +54,7 @@ body.shop #shopHeader h1 a img {
 
 body.shop #shopHeader nav { border: none; margin: 0; }
 @media(min-width: 769px) {
-    body.shop #shopHeader nav { display: none; }
+    body.shop #shopHeader nav { display: none !important; }
     body.shop #shopHeader nav ul { display: flex; align-items: center; gap: 20px; flex-wrap: nowrap; margin: 0; }
     body.shop #shopHeader nav ul li { width: auto; height: auto; padding: 0; }
     body.shop #shopHeader nav ul li a { padding: 5px 0; font-size: 14px; position: relative; white-space: nowrap; display: block; }
@@ -236,11 +236,12 @@ body#shopTopPage .itemList {
 body#shopTopPage .item {
     background: transparent;
     border: none;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     padding: 0;
     margin: 0 !important;
     width: 100% !important;
+    min-width: 0;
     float: none !important;
 }
 body#shopTopPage .item .itemImg {
