@@ -73,7 +73,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css?v=20260519-2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css?v=20260519-3">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -2384,6 +2384,23 @@
                     <button type="submit"><i data-lucide="search"></i></button>
                 </form>
                 {/block:AppsSearch}
+            </div>
+
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">MENU</h3>
+                <ul class="sidebar-list">
+                    <li><a href="{IndexPageURL}"><i data-lucide="home"></i> HOME</a></li>
+                    {block:AppsBlog}
+                    <li><a href="{BlogPageURL}"><i data-lucide="book-open"></i> BLOG</a></li>
+                    {/block:AppsBlog}
+                    {block:AppsCommunity}
+                    <li><a href="{CommunityPageURL}"><i data-lucide="users"></i> COMMUNITY</a></li>
+                    {/block:AppsCommunity}
+                    {block:AppsMembership}
+                    <li><a href="{MembershipPageURL}"><i data-lucide="star"></i> MEMBERSHIP</a></li>
+                    <li><a href="{MembershipMyPageURL}"><i data-lucide="user"></i> MYPAGE</a></li>
+                    {/block:AppsMembership}
+                </ul>
             </div>
 
             <div class="sidebar-block">
