@@ -1059,3 +1059,175 @@ body#shopDetailPage #slideImgPager .smallImgBox img {
     max-height: 100% !important;
     object-fit: cover !important;
 }
+
+/* Two-column layout */
+.ww-layout-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.ww-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px; /* Below header */
+    height: max-content;
+    z-index: 99;
+}
+
+.ww-sidebar .sidebar-block {
+    margin-bottom: 30px;
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.ww-sidebar .sidebar-title {
+    font-family: 'Oswald', sans-serif;
+    color: #ccff00;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(204, 255, 0, 0.3);
+    padding-bottom: 10px;
+}
+
+.ww-sidebar .sidebar-search {
+    position: relative;
+    display: flex;
+}
+.ww-sidebar .sidebar-search input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.ww-sidebar .sidebar-search button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ccff00;
+    cursor: pointer;
+}
+.ww-sidebar .sidebar-search button i {
+    width: 20px;
+    height: 20px;
+}
+
+.ww-sidebar .sidebar-list {
+    list-style: none;
+    padding: 0; margin: 0;
+}
+.ww-sidebar .sidebar-list li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ww-sidebar .sidebar-list li:last-child {
+    border-bottom: none;
+}
+.ww-sidebar .sidebar-list li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 5px;
+    color: #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.ww-sidebar .sidebar-list li a:hover {
+    color: #ccff00;
+    padding-left: 10px;
+}
+.ww-sidebar .sidebar-list li a i {
+    width: 16px;
+    height: 16px;
+}
+
+.ww-sidebar .sidebar-category-plugin ul {
+    list-style: none; padding: 0; margin: 0;
+}
+.ww-sidebar .sidebar-category-plugin ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ww-sidebar .sidebar-category-plugin ul li:last-child {
+    border-bottom: none;
+}
+.ww-sidebar .sidebar-category-plugin ul li a {
+    display: block;
+    padding: 12px 5px;
+    color: #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.ww-sidebar .sidebar-category-plugin ul li a:hover {
+    color: #ccff00;
+    padding-left: 10px;
+}
+.ww-sidebar .sidebar-category-plugin ul li ul {
+    padding-left: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 5px;
+}
+
+.ww-main-area {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure child sections adapt correctly */
+.ww-main-area .work-world-hero {
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 0;
+}
+.ww-main-area .work-world-hero .hero-content {
+    padding-left: 40px;
+}
+
+.ww-main-area .work-world-concept,
+.ww-main-area .work-world-features,
+.ww-main-area .work-world-faq {
+    margin: 0 0 60px 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ww-main-area .work-world-features .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 992px) {
+    .ww-layout-container { 
+        flex-direction: column; 
+        padding: 0;
+    }
+    .ww-main-area {
+        width: 100%;
+    }
+    .ww-sidebar { 
+        width: 100%; 
+        position: static; 
+        padding: 20px 5%; 
+        box-sizing: border-box;
+    }
+    
+    .ww-main-area .work-world-hero,
+    .ww-main-area .work-world-concept,
+    .ww-main-area .work-world-features,
+    .ww-main-area .work-world-faq {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

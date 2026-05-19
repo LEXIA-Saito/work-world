@@ -19,8 +19,10 @@
     {block:NotItemPage}
     <meta property="og:type" content="website">
     <meta property="og:title" content="ワークワールド | 現場のプロへ最先端ワークウェアを">
-    <meta property="og:description" content="愛知県西尾市発。機能性と圧倒的なスタイリングを両立した、現場のプロへ贈る最先端ワークウェア専門ショップ。バートル・空調服など厳選アイテムを通販でお届け。">
-    <meta property="og:image" content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
+    <meta property="og:description"
+        content="愛知県西尾市発。機能性と圧倒的なスタイリングを両立した、現場のプロへ贈る最先端ワークウェア専門ショップ。バートル・空調服など厳選アイテムを通販でお届け。">
+    <meta property="og:image"
+        content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
     <meta property="og:url" content="{IndexPageURL}">
     <meta property="og:site_name" content="ワークワールド">
     <meta property="og:locale" content="ja_JP">
@@ -28,7 +30,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ワークワールド | 現場のプロへ最先端ワークウェアを">
     <meta name="twitter:description" content="愛知県西尾市発。機能性と圧倒的なスタイリングを両立した、現場のプロへ贈る最先端ワークウェア専門ショップ。">
-    <meta name="twitter:image" content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
+    <meta name="twitter:image"
+        content="https://basefile.akamaized.net/workw-base-shop/69f53a3462e11/work_world_hero.jpg">
 
     <!-- SEO: LocalBusiness Structured Data -->
     <script type="application/ld+json">
@@ -68,6 +71,9 @@
     <!-- Web Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -141,7 +147,8 @@
         body {
             height: 100%;
             width: 100%;
-            scroll-behavior: smooth; /* B: Smooth scroll */
+            scroll-behavior: smooth;
+            /* B: Smooth scroll */
         }
 
         a {
@@ -548,6 +555,7 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jackmoore/colorbox@1.6.4/example1/colorbox.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
     <style>
         #reportBtn a.cboxElement button {
             cursor: pointer;
@@ -581,7 +589,7 @@
         }
 
         body.shop {
-            color: #f0f0f0;
+            color: #000;
             font-size: 13px;
             line-height: 1.5;
             -webkit-text-size-adjust: none;
@@ -589,8 +597,8 @@
         }
 
         body {
-            background-color: #050505;
-            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+            background-color: #ADC7C1;
+            font-family: Lato, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
         }
 
         body.shop .wrapper {
@@ -605,7 +613,7 @@
         }
 
         body.shop #mainHeader {
-            margin: 0;
+            margin: 0 auto 34px;
         }
 
 
@@ -624,7 +632,7 @@
         }
 
         body.shop #shopHeader h1 {
-            margin: 0;
+            margin: 56px 0 34px;
         }
 
         body.shop #shopHeader h1 a {
@@ -646,8 +654,9 @@
         }
 
         body.shop #shopHeader nav {
-            border: none;
-            margin: 0;
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+            margin: 0 7px;
         }
 
         body.shop #shopHeader nav ul {
@@ -2200,9 +2209,6 @@
         }
     </style>
 
-    <!-- Custom Styles (loaded after BASE theme CSS to override correctly) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LEXIA-Saito/work-world@main/assets/custom.css">
-
     {block:ItemPage}
     {MetaItemInfoTag}
     <link rel="stylesheet" href="{BASEURL}/css/bootstrap.min.css">
@@ -2367,7 +2373,53 @@
     <p style="text-align: center;">{lang:NotShopPublicMessage}</p>
     {/block:NotShopPublic}
     {block:ShopPublic}
-    
+    <div class="ww-layout-container">
+        <!-- LEFT SIDEBAR -->
+        <aside class="ww-sidebar">
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">SEARCH</h3>
+                {block:AppsSearch}
+                <form id="sidebarSearchForm" class="sidebar-search" action="{SearchPageURL}" method="get">
+                    <input type="text" name="q" placeholder="キーワードで探す" value="{IndexPageSearch}">
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form>
+                {/block:AppsSearch}
+            </div>
+
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">CATEGORY</h3>
+                <ul class="sidebar-list category-links">
+                    <li><a href="{IndexPageURL}">すべてのアイテム</a></li>
+                </ul>
+                {block:AppsItemCategory}
+                <div class="sidebar-category-plugin">
+                    {AppsItemCategoryCategoriesTag}
+                </div>
+                {/block:AppsItemCategory}
+            </div>
+
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">SUPPORT</h3>
+                <ul class="sidebar-list">
+                    <li><a href="{AboutPageURL}"><i data-lucide="info"></i> ABOUT US</a></li>
+                    <li><a href="{ContactPageURL}"><i data-lucide="mail"></i> CONTACT</a></li>
+                    <li><a href="{LawPageURL}"><i data-lucide="file-text"></i> 特定商取引法</a></li>
+                    <li><a href="{PrivacyPageURL}"><i data-lucide="shield"></i> プライバシーポリシー</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">B2B SERVICE</h3>
+                <ul class="sidebar-list b2b-links">
+                    <li><a href="{ContactPageURL}"><i data-lucide="calculator"></i> 大口お見積り</a></li>
+                    <li><a href="{ContactPageURL}"><i data-lucide="file-text"></i> カタログ請求</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="ww-main-area">
+
     <!-- Hero Section -->
     {block:NoIndexPageCategory}{block:NoIndexPageSearch}
     <section class="work-world-hero">
@@ -2383,11 +2435,13 @@
     <section class="work-world-concept">
         <div class="concept-text">
             <h3>WORKWEAR <span>INNOVATION</span></h3>
-            <p>従来の作業服の概念を打ち破る、スポーツやストリートのエッセンスを取り入れた先進的なデザイン。過酷な現場で闘うプロのパフォーマンスを最大限に引き出すため、機能性・耐久性・そして「圧倒的なカッコよさ」を追求した厳選アイテムのみを展開します。</p>
+            <p>従来の作業服の概念を打ち破る、スポーツやストリートのエッセンスを取り入れた先進的なデザイン。過酷な現場で闘うプロのパフォーマンスを最大限に引き出すため、機能性・耐久性・そして「圧倒的なカッコよさ」を追求した厳選アイテムのみを展開します。
+            </p>
         </div>
         <div class="concept-kobasyo">
             <h4>PRODUCED BY KOBASYO</h4>
-            <p>ワークワールドは、愛知県西尾市で長年「働く人のための衣料」を提供し続ける株式会社コバヤシ商事が運営しています。地元密着で培った確かな信頼と実績をベースに、全国のプロフェッショナルへ最高品質のギアをお届けします。</p>
+            <p>ワークワールドは、愛知県西尾市で長年「働く人のための衣料」を提供し続ける株式会社コバヤシ商事が運営しています。地元密着で培った確かな信頼と実績をベースに、全国のプロフェッショナルへ最高品質のギアをお届けします。
+            </p>
             <a href="https://kobasyo.jp/" target="_blank" rel="noopener">運営会社について<i data-lucide="external-link"></i></a>
         </div>
     </section>
@@ -2431,33 +2485,47 @@
         </div>
         <div class="faq-list">
             <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <summary itemprop="name">空調服とはどんな作業服ですか？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span></summary>
+                <summary itemprop="name">空調服とはどんな作業服ですか？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span>
+                </summary>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">空調服とは、服の内側にバッテリー式の小型ファンを内蔵し、外気を取り込んで体を冷やす夏向けの作業服です。炎天下の屋外作業や工場内での熱中症対策として、建設・製造・物流など幅広い現場で導入が進んでいます。ワークワールドではバートルをはじめとした人気ブランドの最新モデルを多数取り扱っています。</p>
+                    <p itemprop="text">
+                        空調服とは、服の内側にバッテリー式の小型ファンを内蔵し、外気を取り込んで体を冷やす夏向けの作業服です。炎天下の屋外作業や工場内での熱中症対策として、建設・製造・物流など幅広い現場で導入が進んでいます。ワークワールドではバートルをはじめとした人気ブランドの最新モデルを多数取り扱っています。
+                    </p>
                 </div>
             </details>
             <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <summary itemprop="name">作業服のサイズ選びのポイントは？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span></summary>
+                <summary itemprop="name">作業服のサイズ選びのポイントは？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span>
+                </summary>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">作業服は動きやすさが重要なため、普段着よりも1〜2サイズ大きめを選ぶのが一般的です。ただし、最近のストレッチ素材を使用したモデルはジャストサイズでも動きやすく設計されています。商品ページの詳細なサイズ表を参考にお選びください。ご不明な点はお問い合わせからお気軽にご相談ください。</p>
+                    <p itemprop="text">
+                        作業服は動きやすさが重要なため、普段着よりも1〜2サイズ大きめを選ぶのが一般的です。ただし、最近のストレッチ素材を使用したモデルはジャストサイズでも動きやすく設計されています。商品ページの詳細なサイズ表を参考にお選びください。ご不明な点はお問い合わせからお気軽にご相談ください。
+                    </p>
                 </div>
             </details>
             <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <summary itemprop="name">バートルの作業服はどこが違うのですか？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span></summary>
+                <summary itemprop="name">バートルの作業服はどこが違うのですか？<span class="faq-toggle-icon"><i
+                            data-lucide="plus"></i></span></summary>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">バートル（BURTLE）は、高い機能性とスタイリッシュなデザインを両立させた国内トップクラスの作業服ブランドです。ストレッチ性・撥水性・速乾性など職場のニーズに応える多彩な素材を使用し、「現場で着るのが楽しくなる」デザイン性の高さが特徴です。ワークワールドではバートルの最新コレクションを随時ラインナップしています。</p>
+                    <p itemprop="text">
+                        バートル（BURTLE）は、高い機能性とスタイリッシュなデザインを両立させた国内トップクラスの作業服ブランドです。ストレッチ性・撥水性・速乾性など職場のニーズに応える多彩な素材を使用し、「現場で着るのが楽しくなる」デザイン性の高さが特徴です。ワークワールドではバートルの最新コレクションを随時ラインナップしています。
+                    </p>
                 </div>
             </details>
             <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <summary itemprop="name">注文から届くまでどれくらいかかりますか？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span></summary>
+                <summary itemprop="name">注文から届くまでどれくらいかかりますか？<span class="faq-toggle-icon"><i
+                            data-lucide="plus"></i></span></summary>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">BASEの決済システムを通じてご注文いただいた場合、通常1〜5営業日以内に発送いたします。お急ぎの場合はお問い合わせページよりご相談ください。発送後の追跡番号はメールにてご連絡します。</p>
+                    <p itemprop="text">
+                        BASEの決済システムを通じてご注文いただいた場合、通常1〜5営業日以内に発送いたします。お急ぎの場合はお問い合わせページよりご相談ください。発送後の追跡番号はメールにてご連絡します。</p>
                 </div>
             </details>
             <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <summary itemprop="name">愛知県西尾市の店舗で直接購入できますか？<span class="faq-toggle-icon"><i data-lucide="plus"></i></span></summary>
+                <summary itemprop="name">愛知県西尾市の店舗で直接購入できますか？<span class="faq-toggle-icon"><i
+                            data-lucide="plus"></i></span></summary>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">はい、愛知県西尾市の株式会社コバヤシ商事の実店舗でもお買い求めいただけます。地域のお客様はぜひお気軽にご来店ください。詳しくはお問い合わせページをご確認いただくか、直接お電話にてご連絡ください。</p>
+                    <p itemprop="text">
+                        はい、愛知県西尾市の株式会社コバヤシ商事の実店舗でもお買い求めいただけます。地域のお客様はぜひお気軽にご来店ください。詳しくはお問い合わせページをご確認いただくか、直接お電話にてご連絡ください。
+                    </p>
                 </div>
             </details>
         </div>
@@ -2638,6 +2706,8 @@
     {block:NoItems}
     <p style="text-align: center;">{lang:NoItemsMessage}</p>
     {/block:NoItems}
+        </main>
+    </div>
     {/block:ShopPublic}
     <script type="text/javascript">
         var process_flg = false;
@@ -2943,7 +3013,8 @@
                 <div class="facebook">
                     <div class="fb-share-button" data-layout="button_count" data-size="small" data-mobile-iframe="true">
                         <a class="fb-xfbml-parse-ignore" target="_blank"
-                            href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">シェア</a></div>
+                            href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">シェア</a>
+                    </div>
                 </div>
                 {EmbedWidgetTag}
             </div>
@@ -3006,7 +3077,7 @@
       ]
     }
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/gh/jackmoore/colorbox@1.6.4/jquery.colorbox-min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/stevenwanderski/bxslider-4@4.2.15/dist/jquery.bxslider.min.js"></script>
     <script
@@ -3053,7 +3124,8 @@
     <div class="main">
         <div id="about">
             <h2>about</h2>
-            <p>従来の作業服の概念を打ち破る、スポーツやストリートのエッセンスを取り入れた先進的なデザイン。過酷な現場で闘うプロのパフォーマンスを最大限に引き出すため、機能性・耐久性・そして「圧倒的なカッコよさ」を追求した厳選アイテムのみを展開します。<br><br>ワークワールドは、愛知県西尾市で長年「働く人のための衣料」を提供し続ける株式会社コバヤシ商事が運営しています。地元密着で培った確かな信頼と実績をベースに、全国のプロフェッショナルへ最高品質のギアをお届けします。</p>
+            <p>従来の作業服の概念を打ち破る、スポーツやストリートのエッセンスを取り入れた先進的なデザイン。過酷な現場で闘うプロのパフォーマンスを最大限に引き出すため、機能性・耐久性・そして「圧倒的なカッコよさ」を追求した厳選アイテムのみを展開します。<br><br>ワークワールドは、愛知県西尾市で長年「働く人のための衣料」を提供し続ける株式会社コバヤシ商事が運営しています。地元密着で培った確かな信頼と実績をベースに、全国のプロフェッショナルへ最高品質のギアをお届けします。
+            </p>
             <div class="social">
                 <ul class="clearfix">
                     {block:ShopInstagramId}
